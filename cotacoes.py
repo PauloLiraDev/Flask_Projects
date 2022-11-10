@@ -4,6 +4,7 @@ import requests
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
     cotacoes = requests.get('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL')
