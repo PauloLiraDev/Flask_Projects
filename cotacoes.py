@@ -9,7 +9,8 @@ def index():
     cotacoes = cotacoes.json()
     dolar = str(cotacoes['USDBRL']['bid']).replace('.', ',')
     euro = str(cotacoes['EURBRL']['bid']).replace('.', ',')
-    bitcoin = str(cotacoes['BTCBRL']['bid']).replace('.', ',')
+    bitcoin = str(cotacoes['BTCBRL']['bid'])
     return render_template('index.html', dolar=dolar, euro=euro, bitcoin=bitcoin)
+
 
 app.run(port=8080, debug=True)
