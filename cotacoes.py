@@ -4,8 +4,8 @@ import requests
 
 app = Flask(__name__)
 
-
 @app.route("/")
+
 def index():
     cotacoes = requests.get('https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL')
     cotacoes = cotacoes.json()
@@ -15,4 +15,4 @@ def index():
     return render_template('index.html', dolar=dolar, euro=euro, bitcoin=bitcoin)
 
 
-app.run(port=8080, debug=True)
+app.run(host='0.0.0.0', port=8080, debug=True)
